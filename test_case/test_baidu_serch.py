@@ -6,7 +6,7 @@
 
 from common.request_tool import RequestTool
 import time
-
+from common.read_config import ReadConfig
 import unittest
 
 class TestBaidu(unittest.TestCase):
@@ -18,7 +18,9 @@ class TestBaidu(unittest.TestCase):
 
     def test_cc(self):
         driver = RequestTool()
-        driver.open_url('https://www.baidu.com/')
+        ipconfig = ReadConfig().get_http('baseurl')
+
+        driver.open_url(ipconfig)
         # driver.input_data('id', 'kw', '哈哈')
         driver.find_element('id', 'kw').send_keys('哈哈')
         time.sleep(2)
@@ -26,7 +28,7 @@ class TestBaidu(unittest.TestCase):
         driver.click('id', 'su')
 
         time.sleep(2)
-        # driver.get_screenshot(2)
+        driver.get_screenshot(2)
         driver.delete_self()
 
 
