@@ -9,6 +9,9 @@
 import time
 from splinter import Browser
 
+user = 'lllgou2021@yeah.net'
+pwd = 'xxxxxxxxx'
+
 
 def login_mail(url):
     browser = Browser('chrome')
@@ -24,8 +27,8 @@ def login_mail(url):
     aa = browser.is_element_present_by_xpath("//input[@name='email']")
     if aa:
         # fill in account and password
-        browser.find_by_xpath("//input[@name='email']").fill('lllgou2021@yeah.net')
-        browser.find_by_xpath("//input[@name='password']").fill('xxxxxxxxx')
+        browser.find_by_xpath("//input[@name='email']").fill(user)
+        browser.find_by_xpath("//input[@name='password']").fill(pwd)
         time.sleep(3)
         # click the button of login
         browser.find_by_id('dologin').click()
