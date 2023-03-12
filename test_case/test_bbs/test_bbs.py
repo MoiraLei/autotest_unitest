@@ -5,9 +5,7 @@ import requests
 
 '''
 用于测试tinyBBS系统的测试类
-
-@author freePHP
-@version 1.0.0
+tinyBBS
 '''
 
 
